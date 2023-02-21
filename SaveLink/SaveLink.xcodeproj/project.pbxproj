@@ -8,21 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		3BA751D529A521B2000D9B49 /* SaveLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751D429A521B2000D9B49 /* SaveLinkApp.swift */; };
-		3BA751D729A521B2000D9B49 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751D629A521B2000D9B49 /* ContentView.swift */; };
+		3BA751D729A521B2000D9B49 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751D629A521B2000D9B49 /* AuthenticationView.swift */; };
 		3BA751D929A521B4000D9B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BA751D829A521B4000D9B49 /* Assets.xcassets */; };
 		3BA751DC29A521B4000D9B49 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BA751DB29A521B4000D9B49 /* Preview Assets.xcassets */; };
 		3BA751E429A52324000D9B49 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3BA751E329A52324000D9B49 /* FirebaseAnalytics */; };
 		3BA751E629A52324000D9B49 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3BA751E529A52324000D9B49 /* FirebaseAnalyticsSwift */; };
 		3BA751E829A5244C000D9B49 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BA751E729A5244B000D9B49 /* GoogleService-Info.plist */; };
+		3BA751EA29A52DD1000D9B49 /* LoginEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751E929A52DD1000D9B49 /* LoginEmailView.swift */; };
+		3BA751EC29A53987000D9B49 /* RegisterEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751EB29A53987000D9B49 /* RegisterEmailView.swift */; };
+		3BA751EE29A53A68000D9B49 /* DismissView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751ED29A53A68000D9B49 /* DismissView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3BA751D129A521B2000D9B49 /* SaveLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA751D429A521B2000D9B49 /* SaveLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLinkApp.swift; sourceTree = "<group>"; };
-		3BA751D629A521B2000D9B49 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3BA751D629A521B2000D9B49 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		3BA751D829A521B4000D9B49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BA751DB29A521B4000D9B49 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3BA751E729A5244B000D9B49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3BA751E929A52DD1000D9B49 /* LoginEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailView.swift; sourceTree = "<group>"; };
+		3BA751EB29A53987000D9B49 /* RegisterEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailView.swift; sourceTree = "<group>"; };
+		3BA751ED29A53A68000D9B49 /* DismissView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				3BA751D429A521B2000D9B49 /* SaveLinkApp.swift */,
-				3BA751D629A521B2000D9B49 /* ContentView.swift */,
+				3BA751D629A521B2000D9B49 /* AuthenticationView.swift */,
+				3BA751E929A52DD1000D9B49 /* LoginEmailView.swift */,
+				3BA751EB29A53987000D9B49 /* RegisterEmailView.swift */,
+				3BA751ED29A53A68000D9B49 /* DismissView.swift */,
 				3BA751E729A5244B000D9B49 /* GoogleService-Info.plist */,
 				3BA751D829A521B4000D9B49 /* Assets.xcassets */,
 				3BA751DA29A521B4000D9B49 /* Preview Content */,
@@ -152,7 +161,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BA751D729A521B2000D9B49 /* ContentView.swift in Sources */,
+				3BA751D729A521B2000D9B49 /* AuthenticationView.swift in Sources */,
+				3BA751EE29A53A68000D9B49 /* DismissView.swift in Sources */,
+				3BA751EA29A52DD1000D9B49 /* LoginEmailView.swift in Sources */,
+				3BA751EC29A53987000D9B49 /* RegisterEmailView.swift in Sources */,
 				3BA751D529A521B2000D9B49 /* SaveLinkApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
