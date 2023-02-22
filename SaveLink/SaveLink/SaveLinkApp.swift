@@ -24,9 +24,16 @@ struct SaveLinkApp: App {
 //    Registramos la clase 'AppDelegate para configurar Firebase
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+//Pasa saber si el usuario esta logueado o no
+    @StateObject var authenticationViewModel = AuthenticationViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            AuthenticationView()
+            if let user = authenticationViewModel.user {
+                Text("Usuario Logueado! \(user.email)")
+            } else {
+                AuthenticationView(authenticationViewModel: authenticationViewModel)
+            }
         }
     }
 }
