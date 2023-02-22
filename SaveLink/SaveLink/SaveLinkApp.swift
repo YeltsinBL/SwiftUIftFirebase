@@ -7,12 +7,14 @@
 
 import SwiftUI
 import Firebase
+import FacebookLogin
 
 //creamos la class 'AppDelegate' porque esta inicializando Firebase
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     FirebaseApp.configure() //inicializar Firebase
+      ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 
     return true
   }

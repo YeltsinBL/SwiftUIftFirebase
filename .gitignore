@@ -89,4 +89,5 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-**/ios/Runner/GoogleService-Info.plist
+# **/ios/Runner/GoogleService-Info.plist
+*.plist

@@ -22,6 +22,7 @@
 		3BA751F629A544FF000D9B49 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751F529A544FF000D9B49 /* AuthenticationRepository.swift */; };
 		3BA751F829A5462D000D9B49 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751F729A5462D000D9B49 /* AuthenticationViewModel.swift */; };
 		3BA751FA29A5E922000D9B49 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751F929A5E922000D9B49 /* HomeView.swift */; };
+		3BA7520029A5FA45000D9B49 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 3BA751FF29A5FA45000D9B49 /* FacebookLogin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		3BA751F529A544FF000D9B49 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		3BA751F729A5462D000D9B49 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		3BA751F929A5E922000D9B49 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3BA7520129A5FAC4000D9B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3BA7520229A5FF03000D9B49 /* SaveLink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SaveLink.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA7520029A5FA45000D9B49 /* FacebookLogin in Frameworks */,
 				3BA751E629A52324000D9B49 /* FirebaseAnalyticsSwift in Frameworks */,
 				3BA751F129A54163000D9B49 /* FirebaseAuth in Frameworks */,
 				3BA751E429A52324000D9B49 /* FirebaseAnalytics in Frameworks */,
@@ -74,6 +78,8 @@
 		3BA751D329A521B2000D9B49 /* SaveLink */ = {
 			isa = PBXGroup;
 			children = (
+				3BA7520229A5FF03000D9B49 /* SaveLink.entitlements */,
+				3BA7520129A5FAC4000D9B49 /* Info.plist */,
 				3BA751D429A521B2000D9B49 /* SaveLinkApp.swift */,
 				3BA751FD29A5F4AB000D9B49 /* Authentication */,
 				3BA751E729A5244B000D9B49 /* GoogleService-Info.plist */,
@@ -157,6 +163,7 @@
 				3BA751E329A52324000D9B49 /* FirebaseAnalytics */,
 				3BA751E529A52324000D9B49 /* FirebaseAnalyticsSwift */,
 				3BA751F029A54163000D9B49 /* FirebaseAuth */,
+				3BA751FF29A5FA45000D9B49 /* FacebookLogin */,
 			);
 			productName = SaveLink;
 			productReference = 3BA751D129A521B2000D9B49 /* SaveLink.app */;
@@ -188,6 +195,7 @@
 			mainGroup = 3BA751C829A521B2000D9B49;
 			packageReferences = (
 				3BA751E229A52324000D9B49 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				3BA751FE29A5FA44000D9B49 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = 3BA751D229A521B2000D9B49 /* Products */;
 			projectDirPath = "";
@@ -350,11 +358,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SaveLink/SaveLink.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SaveLink/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SaveLink/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -378,11 +388,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SaveLink/SaveLink.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SaveLink/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SaveLink/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -433,6 +445,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		3BA751FE29A5FA44000D9B49 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -450,6 +470,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3BA751E229A52324000D9B49 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		3BA751FF29A5FA45000D9B49 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3BA751FE29A5FA44000D9B49 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
