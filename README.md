@@ -56,3 +56,9 @@
 -- Hacemos la llamada dentro de un 'do-catch' por si el método del Repository obtuvo un error.
 - `HomeView`: llamamos al método al momento de hacer clic en un botón.
 - En el archivo 'main', indicamos en la verificación que si no encuentra un usuario logueado, muestre la vista inicial AuthenticationView.
+
+### Iniciar Sesión
+- `AuthenticationFireBaseDataSource`: creamos un método para iniciar sesión y tiene la misma estructura del crear usuario, solo cambia en el Auth, ahora se utiliza el signIn en vez del createUser: 'Auth.auth().signIn'.
+-El `AuthenticationRepository` y `AuthenticationViewModel` su método de iniciar sesión es el mismo que el crear usuario.
+- `LoginEmailView`: llamamos al método del ViewModel para iniciar sesión al hacer clic en el botón.
+- `AuthenticationView`: pasamos la propiedad del ViewModel al LoginEmailView para que lo utilice.

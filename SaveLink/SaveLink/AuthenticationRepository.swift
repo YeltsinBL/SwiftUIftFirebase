@@ -27,6 +27,13 @@ final class AuthenticationRepository {
                                                        completionBlock: completionBlock)
     }
     
+//    Iniciar sesión
+    func login(email: String, password: String, completionBlock: @escaping (Result<User, Error>) -> Void) {
+        authenticationFirebaseDataSource.login(email: email,
+                                               password: password,
+                                               completionBlock: completionBlock)
+    }
+    
 //    para cerrar sesión
     func logout() throws {
         try authenticationFirebaseDataSource.logout()

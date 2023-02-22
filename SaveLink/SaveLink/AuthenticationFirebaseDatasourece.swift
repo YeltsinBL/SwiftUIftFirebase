@@ -39,6 +39,21 @@ final class AuthenticationFireBaseDataSource {
         }
     }
     
+//    Iniciar sesión
+    func login(email: String, password: String, completionBlock: @escaping (Result<User, Error>) -> Void){
+        Auth.auth().signIn(withEmail: email, password: password) { authDataResult, error in
+            if let error = error {
+                print("Error al iniciar sesión: \(error.localizedDescription)")
+                completionBlock(.failure(error))
+                return
+            }
+            let email = authDataResult?.user.email ?? "No Email"
+            print("Sesión iniciada: \(email)")
+            completionBlock(.success(.init(email: email)))
+        }
+    }
+    
+    
 //    para cerrar sesión o muestre un error si no se pudo realizar
     func logout() throws {
         try Auth.auth().signOut()
