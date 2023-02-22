@@ -9,12 +9,13 @@
 ## Autenticación con Firebase
 `AuthenticationView`:
 - Renombramos el archivo de la vista 'ContentView' por 'AuthenticationView' para tenerlo mas ordenado.
-- Creamos un enum que nos ayudara a saber que accion se va a realizar, si se inicia sesion o se registrarara.
+- Creamos un enum que nos ayudara a saber que acción se va a realizar, si se inicia sesión o se registrará.
 - Utilizaremos este enum dentro de la struct de la View como una variable privada de tipo 'State'.
-- Para visualizar las vistas de acuerdo a la accion, se mostrara como 'sheet'.
+- Para visualizar las vistas de acuerdo a la acción, se mostrará como 'sheet'.
 - Creamos la propiedad del ViewModel del tipo 'ObservedObject' porque es del tipo 'ObservableObject'.
 - Pasamos esta propiedad a la vista 'RegisterEmailView'.
 
+### Crear usuario
 `AuthenticationFireBaseDataSource`:
 - Importamos 'FirebaseAuth' qué se utilizará para crear la nueva cuenta del Usuario e iniciar sesión.
 - Creamos una struct 'User' para que reciba el email que se ha creado.
@@ -40,3 +41,8 @@
 - En el botón de 'Aceptar' utilizaremos el método de crear usuario hecho en el 'ViewModel'.
 - Sí hubo un error utilizamos la variable pública opcional del ViewModel para mostrarlo como texto en la vista.
 
+### Sesión activa
+- `AuthenticationFireBaseDataSource`: Creamos un método que devuelve el correo de la sesión activa del usuario de manera opcional utilizando el 'Auth.auth().currentUser?.email' y al retornar hacemos la inicialización de la struct User pasando el email activo.
+- `AuthenticationRepository`: creamos el método que utilizará el método del DataSource que devuelve el correo de la sesión activa del usuario.
+- `AuthenticationViewModel`: creamos el método que utilizará el método del Repository que devuelve el correo de la sesión activa del usuario y lo pasamos a la variable pública del usuario.
+-- Lo llamamos dentro del init, para que muestre la vista correcta si hay sesión activa.

@@ -17,6 +17,12 @@ final class AuthenticationViewModel: ObservableObject {
     private let authenticationRepository: AuthenticationRepository
     init(authenticationRepository: AuthenticationRepository = AuthenticationRepository()) {
         self.authenticationRepository = authenticationRepository
+        getCurrentUser() // para que muestre si la sesión esta activa
+    }
+    
+    //    obtener la sesion actual del usuario y pasarlo a la variable publica del usuario
+    func getCurrentUser() {
+        self.user = authenticationRepository.getCurrentUser()
     }
     
 //    creamos el metodo de crear usuario que sera llamado desde la vista

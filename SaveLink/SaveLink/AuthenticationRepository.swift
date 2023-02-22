@@ -14,6 +14,12 @@ final class AuthenticationRepository {
     init(authenticationFirebaseDataSource: AuthenticationFireBaseDataSource = AuthenticationFireBaseDataSource()) {
         self.authenticationFirebaseDataSource = authenticationFirebaseDataSource
     }
+    
+    //    obtener la sesión actual del usuario
+    func getCurrentUser() -> User? {
+        authenticationFirebaseDataSource.getCurrentUser()
+    }
+    
 //    creamos el metodo para crear el nuevo usuario de DataSourece
     func createNewUser(email: String, password: String, completionBlock: @escaping (Result<User, Error>) -> Void) {
         authenticationFirebaseDataSource.createNewUser(email: email,
