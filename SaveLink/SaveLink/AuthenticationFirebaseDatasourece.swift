@@ -38,4 +38,10 @@ final class AuthenticationFireBaseDataSource {
             completionBlock(.success(.init(email: email)))
         }
     }
+    
+//    para cerrar sesión o muestre un error si no se pudo realizar
+    func logout() throws {
+        try Auth.auth().signOut()
+    }
+    
 }

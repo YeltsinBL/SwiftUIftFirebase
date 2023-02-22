@@ -26,4 +26,9 @@ final class AuthenticationRepository {
                                                        password: password,
                                                        completionBlock: completionBlock)
     }
+    
+//    para cerrar sesión
+    func logout() throws {
+        try authenticationFirebaseDataSource.logout()
+    }
 }

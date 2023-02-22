@@ -21,6 +21,7 @@
 		3BA751F429A542C1000D9B49 /* AuthenticationFirebaseDatasourece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751F329A542C1000D9B49 /* AuthenticationFirebaseDatasourece.swift */; };
 		3BA751F629A544FF000D9B49 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751F529A544FF000D9B49 /* AuthenticationRepository.swift */; };
 		3BA751F829A5462D000D9B49 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751F729A5462D000D9B49 /* AuthenticationViewModel.swift */; };
+		3BA751FA29A5E922000D9B49 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751F929A5E922000D9B49 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		3BA751F329A542C1000D9B49 /* AuthenticationFirebaseDatasourece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFirebaseDatasourece.swift; sourceTree = "<group>"; };
 		3BA751F529A544FF000D9B49 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		3BA751F729A5462D000D9B49 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		3BA751F929A5E922000D9B49 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				3BA751D629A521B2000D9B49 /* AuthenticationView.swift */,
 				3BA751E929A52DD1000D9B49 /* LoginEmailView.swift */,
 				3BA751EB29A53987000D9B49 /* RegisterEmailView.swift */,
+				3BA751F929A5E922000D9B49 /* HomeView.swift */,
 			);
 			path = AuthenticationViews;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA751FA29A5E922000D9B49 /* HomeView.swift in Sources */,
 				3BA751D729A521B2000D9B49 /* AuthenticationView.swift in Sources */,
 				3BA751EE29A53A68000D9B49 /* DismissView.swift in Sources */,
 				3BA751EA29A52DD1000D9B49 /* LoginEmailView.swift in Sources */,

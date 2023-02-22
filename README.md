@@ -46,3 +46,13 @@
 - `AuthenticationRepository`: creamos el método que utilizará el método del DataSource que devuelve el correo de la sesión activa del usuario.
 - `AuthenticationViewModel`: creamos el método que utilizará el método del Repository que devuelve el correo de la sesión activa del usuario y lo pasamos a la variable pública del usuario.
 -- Lo llamamos dentro del init, para que muestre la vista correcta si hay sesión activa.
+- En el archivo 'main', agregamos la propiedad del ViewModel y hacemos una verificación para saber que vista mostrar.
+-- Si encuentra una sesión activa mostrará la vista de HomeView.
+
+### Cerrar Sesión
+- `AuthenticationFireBaseDataSource`: Creamos un método cierra la sesión activa utilizando 'Auth.auth().signOut()' o devuelve un error si no lo realizó.
+- `AuthenticationRepository`: creamos el método que utilizará el método del DataSource para cerrar la sesión.
+- `AuthenticationViewModel`: creamos el método que utilizará el método del Repository para cerrar la sesión.
+-- Hacemos la llamada dentro de un 'do-catch' por si el método del Repository obtuvo un error.
+- `HomeView`: llamamos al método al momento de hacer clic en un botón.
+- En el archivo 'main', indicamos en la verificación que si no encuentra un usuario logueado, muestre la vista inicial AuthenticationView.
