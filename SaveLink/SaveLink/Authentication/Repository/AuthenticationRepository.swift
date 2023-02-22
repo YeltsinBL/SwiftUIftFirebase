@@ -33,6 +33,11 @@ final class AuthenticationRepository {
                                                password: password,
                                                completionBlock: completionBlock)
     }
+
+//    Iniciar sesión con Facebook registrando el token
+    func loginWithFacebook(completionBlock: @escaping (Result<User, Error>) -> Void ){
+        authenticationFirebaseDataSource.loginWithFacebook(completionBlock: completionBlock)
+    }
     
 //    para cerrar sesión
     func logout() throws {

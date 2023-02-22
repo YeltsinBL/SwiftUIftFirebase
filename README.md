@@ -63,11 +63,19 @@
 - `LoginEmailView`: llamamos al método del ViewModel para iniciar sesión al hacer clic en el botón.
 - `AuthenticationView`: pasamos la propiedad del ViewModel al LoginEmailView para que lo utilice.
 
-## Autenticacion utilizando proveedor de Facebook-Meta
+## Autenticación utilizando proveedor de Facebook-Meta
 
 ### Configurando Facebook-Meta
-- Seleccionamos el archivo raiz del proyecto, luego clic en el nombre del proyecto del Targets y por ultimo en info.
+- Seleccionamos el archivo raiz del proyecto, luego clic en el nombre del proyecto del Targets y por último en info.
 - Agregamos en 'Custom iOS Target Properties' una nueva key llamada 'NSAppTransportSecurity' y enter para mostrar el archivo 'Info.plist'
 - Seleccionamos el Info.plist y agregamos una key dentro de 'App Transport Security Settings' con el nombre de 'Allow Arbitrary Loads' con valor 'Yes' para dar permisos a realizar peticiones HTTP y HTTPs.
-- Abrimos el Info.plist en formato codigo y pegamos el codigo dado por Facebook-Meta, actualizamos algunos datos de acuerdo a lo indicado en su portal y comprobamos si funciona.
+- Abrimos el Info.plist en formato código y pegamos el código dado por Facebook-Meta, actualizamos algunos datos de acuerdo a lo indicado en su portal y comprobamos si funciona.
 - En el archivo `main` del proyecto, configuramos Facebook en el AppDelegate, como lo hicimos con Firebase, como ya se hizo el AppDelegate solo agregamos la linea de Facebook.
+
+### Iniciar Sesión con Facebook
+- `FacebookAuthentication`: se creó esta clase para que tenga su método independiente de iniciar sesión con Facebook y obtener su token.
+- `AuthenticationFireBaseDataSource`: utilizamos el método de iniciar sesión con facebook para obtener el token.
+-- Si devuelve el token, entonces lo utilizamos para obtener las credenciales de Facebook y lo pasamos a Firebase para que lo registre.
+- `AuthenticationRepository`: creamos un método para utilizar el método de iniciar sesión con Facebook del DataSource.
+- `AuthenticationViewModel`: este método es igual al iniciar sesión con Firebase.
+- `AuthenticationView`: agregamos un nuevo botón para iniciar sesión con Facebook utilizando el método creado en el ViewModel.

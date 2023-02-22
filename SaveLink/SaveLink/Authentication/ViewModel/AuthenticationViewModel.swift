@@ -49,6 +49,18 @@ final class AuthenticationViewModel: ObservableObject {
         }
     }
     
+//    Iniciar sesión con Facebook
+    func loginWithFacebook() {
+        authenticationRepository.loginWithFacebook { [weak self] result in
+            switch result {
+            case .success(let user):
+                self?.user = user
+            case .failure(let error):
+                self?.messageError = error.localizedDescription
+            }
+        }
+    }
+    
 //    para cerrar sesión
     func logout() {
         do {
