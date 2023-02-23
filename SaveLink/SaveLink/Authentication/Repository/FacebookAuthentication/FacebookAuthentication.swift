@@ -24,4 +24,8 @@ final class FacebookAuthentication {
         }
     }
     
+//    obtener el token del usuario logueado
+    func getAccessToken() -> String? {
+        AccessToken.current?.tokenString
+    }
 }

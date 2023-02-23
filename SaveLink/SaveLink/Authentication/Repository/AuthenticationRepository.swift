@@ -54,4 +54,11 @@ final class AuthenticationRepository {
         authenticationFirebaseDataSource.linkFaceook(completionBlock: completionBlock)
     }
     
+//    vincular la cuenta con Email y password
+    func linkEmailAndPassword(email: String, password: String, completionBlock: @escaping(Bool) -> Void) {
+        authenticationFirebaseDataSource.linkEmailAndPassword(email: email,
+                                                              password: password,
+                                                              completionBlock: completionBlock)
+    }
+    
 }

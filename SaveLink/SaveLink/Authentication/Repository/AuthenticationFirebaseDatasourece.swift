@@ -73,6 +73,7 @@ final class AuthenticationFireBaseDataSource {
                 }
             case .failure(let error):
                 print("Error iniciando sesión con Facebook: \(error.localizedDescription)")
+                completionBlock(.failure(error))
             }
         }
     }
@@ -105,6 +106,8 @@ final class AuthenticationFireBaseDataSource {
                 Auth.auth().currentUser?.link(with: credential, completion: { authDataResult, error in
                     if let error =  error {
                         print("Error al vincular la credencial Facebook: \(error.localizedDescription)")
+                        completionBlock(false)
+                        return
                     }
                     let email = authDataResult?.user.email ?? "No email"
                     print("Nuevo user vinculado con el email: \(email)")
@@ -117,4 +120,47 @@ final class AuthenticationFireBaseDataSource {
         }
     }
     
+//    Obtenemos la credencial de Facebook para vincular con otro proveedor
+    func getCurrentCredential() -> AuthCredential? {
+        guard let providerId = currentProvider().last else { return nil }
+        switch providerId {
+        case .emailAndPassword, .unknow:
+            return nil
+        case .facebook:
+            guard let accessToken = facebookAuthentication.getAccessToken() else { return nil }
+            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken)
+            return credential
+        }
+    }
+//    vincular la cuenta con Email y password
+    func linkEmailAndPassword(email: String, password: String, completionBlock: @escaping(Bool) -> Void) {
+        guard let credential = getCurrentCredential() else {
+            print("Error al obtener la credencial")
+            completionBlock(false)
+            return
+        }
+        Auth.auth().currentUser?.reauthenticate(with: credential, completion: { authDataResult, error in
+            if let error =  error {
+                print("Error al reautenticar al usuario: \(error.localizedDescription)")
+                completionBlock(false)
+                return
+            }
+//            creamos la credencial del email y password
+            let emailAndPasswordCredential = EmailAuthProvider.credential(withEmail: email,
+                                                                          password: password)
+//            Vinculamos la cuenta con la nueva credencial del email y password
+            Auth.auth().currentUser?.link(with: emailAndPasswordCredential,
+                                          completion: { authDataResult, error in
+                if let error =  error {
+                    print("Error al vincular la credencial Email y password: \(error.localizedDescription)")
+                    completionBlock(false)
+                    return
+                }
+                let email = authDataResult?.user.email ?? "No email"
+                print("Nuevo user vinculado con email: \(email)")
+                completionBlock(true)
+            })
+            
+        })
+    }
 }

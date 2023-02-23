@@ -102,4 +102,15 @@ final class AuthenticationViewModel: ObservableObject {
         }
     }
     
+//    vincular la cuenta con Email y password
+    func linkEmailAndPassword(email: String, password: String) {
+        authenticationRepository.linkEmailAndPassword(email: email, password: password)
+        { [weak self] isSuccess in
+            print("Email y password vinculados: \(isSuccess.description)")
+            self?.isAccountLinked = isSuccess
+            self?.showAlert.toggle()
+            self?.getCurrentProvider()
+        }
+    }
+    
 }

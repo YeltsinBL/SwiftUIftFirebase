@@ -92,8 +92,17 @@
 -- El método para obtener las cuentas vinculadas lo llamamos dentro de un 'Task' en el bloque de la vista principal, en este caso es un Form.
 -- Los otros 2 método casa uno se utiliza en los botones que corresponde dentro de un 'Disable' para saber si serán inhabilitados o no.
 
-### Vincular Cuenta del Proveedor Facebook
+### Vincular Cuenta del Proveedor Facebook con Email
 - `AuthenticationFireBaseDataSource`: creamos un método para obtener el link del currentUser, la lógica es parecido al de iniciar sesión solo que en vez de usar 'signIn' utilizamos el 'currentUser?.link', por lo demás es igual.
 - `AuthenticationRepository`: creamos un método para utilizar el método de vincular cuenta de Facebook.
 - `AuthenticationViewModel`: creamos un método para utilizar el método de vincular cuenta de Facebook del Repository y actualizar los valores de las variables globales para visualizar los cambios en la vista.
 - `ProfileView`: utilizamos el método de vincular Facebook en el botón y las variables globales para mostrar una alerta.
+
+### Vincular Cuenta del Proveedor Email con Facebook
+-`FacebookAuthentication`: creamos un método para obtener el token de Facebook del usuario logueado.
+- `AuthenticationFireBaseDataSource`:  hacemos dos métodos:
+-- En el primer método, obtenemos la credencial de Facebook utilizando el token obtenido.
+-- En el segundo método, vinculamos la cuenta de Facebook con el Email, para ello debemos de reautenticarnos para confirmar la sesión y creamos las nuevas credenciales del email para vincularlas al 'currentUser?.link'.
+- `AuthenticationRepository`: creamos un método para utilizar el método de vincular cuenta con Email.
+- `AuthenticationViewModel`: creamos un método para utilizar el método de vincular cuenta con Email del Repository y actualizar los valores de las variables globales para visualizar los cambios en la vista.
+- `ProfileView`: utilizamos el método de vincular con Email en el botón, que mostrará un pequeño formulario para ingresar nuestra cuenta y las variables globales mostrarán una alerta si se vinculó o no.

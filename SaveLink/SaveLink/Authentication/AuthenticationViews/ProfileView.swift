@@ -10,16 +10,45 @@ import SwiftUI
 struct ProfileView: View {
     
     @ObservedObject var authenticationViewModel: AuthenticationViewModel
+    @State var expandVerificationWithEmailForm: Bool = false
+    @State var textFieldEmail: String = ""
+    @State var textFieldPassword: String = ""
     
     var body: some View {
         Form {
             Section {
                 Button {
                     print("Vincular Email y Password")
+                    expandVerificationWithEmailForm.toggle()
                 } label: {
                     Label("Vincular Email", systemImage: "envelope.fill")
                 }
                 .disabled(authenticationViewModel.isEmailAndPasswordLinked())
+                if expandVerificationWithEmailForm {
+                    Group {
+                        Text("Vincula tu correo electronico con tu cuenta actual")
+                            .tint(.secondary)
+                            .multilineTextAlignment(.center)
+                            .padding(.top, 2)
+                            .padding(.bottom, 2)
+                        TextField("Ingresa tu correo electronico", text: $textFieldEmail)
+                        TextField("Ingresa tu contrasena", text: $textFieldPassword)
+                        Button("Aceptar") {
+                            authenticationViewModel.linkEmailAndPassword(email: textFieldEmail, password: textFieldPassword)
+                        }
+                        .padding(.top, 18)
+                        .buttonStyle(.bordered)
+                        .tint(.blue)
+                        if let messageError =  authenticationViewModel.messageError {
+                            Text(messageError)
+                                .bold()
+                                .font(.body)
+                                .foregroundColor(.red)
+                                .padding(.top, 20)
+                        }
+                    }
+                }
+                
                 Button {
                     print("Vincular Facebook")
                     authenticationViewModel.linkFaceook()
@@ -45,6 +74,10 @@ struct ProfileView: View {
                isPresented: $authenticationViewModel.showAlert) {
             Button("Aceptar"){
                 print("Cerrar Alert")
+//                ocultamos el formulario de vincular cuenta por email y password
+                if authenticationViewModel.isAccountLinked {
+                    expandVerificationWithEmailForm = false
+                }
             }
         } message: {
             Text(authenticationViewModel.isAccountLinked ? "Acabas de vincular tu cuenta": "Error al vincular la cuenta")
