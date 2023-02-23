@@ -79,3 +79,15 @@
 - `AuthenticationRepository`: creamos un método para utilizar el método de iniciar sesión con Facebook del DataSource.
 - `AuthenticationViewModel`: este método es igual al iniciar sesión con Firebase.
 - `AuthenticationView`: agregamos un nuevo botón para iniciar sesión con Facebook utilizando el método creado en el ViewModel.
+
+## Vincular Cuenta con distintos proveedores
+
+### Verificaar las cuentas vinculadas
+- `AuthenticationFireBaseDataSource`: creamos un método para obtener los proveedores vinculados al email utilizando el 'currentUser' de Firebase y transformamos los IDs a un método del dominio.
+- `AuthenticationRepository`: creamos un método para utilizar el método de obtener los proveedores.
+- `AuthenticationViewModel`: aqui creamos 3 métodos:
+-- El primero para utilizar el método de obtener los proveedores vinculados y lo almacenamos en una variable global.
+-- El segundo y tercero hacen lo mismo, verifica que cuenta o cuentas están vinculadas para inhabilitar los botones.
+- `ProfileView`: utilizamos los 3 nuevos método creado en el ViewModel:
+-- El método para obtener las cuentas vinculadas lo llamamos dentro de un 'Task' en el bloque de la vista principal, en este caso es un Form.
+-- Los otros 2 método casa uno se utiliza en los botones que corresponde dentro de un 'Disable' para saber si serán inhabilitados o no.

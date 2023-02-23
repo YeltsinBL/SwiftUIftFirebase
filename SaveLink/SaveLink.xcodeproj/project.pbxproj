@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B6D90B029A7AEE8007306BA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90AF29A7AEE8007306BA /* ProfileView.swift */; };
+		3B6D90B329A7B600007306BA /* LinkedAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90B229A7B600007306BA /* LinkedAccounts.swift */; };
+		3B6D90B529A7B65F007306BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90B429A7B65F007306BA /* User.swift */; };
 		3BA751D529A521B2000D9B49 /* SaveLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751D429A521B2000D9B49 /* SaveLinkApp.swift */; };
 		3BA751D729A521B2000D9B49 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751D629A521B2000D9B49 /* AuthenticationView.swift */; };
 		3BA751D929A521B4000D9B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BA751D829A521B4000D9B49 /* Assets.xcassets */; };
@@ -27,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B6D90AF29A7AEE8007306BA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3B6D90B229A7B600007306BA /* LinkedAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedAccounts.swift; sourceTree = "<group>"; };
+		3B6D90B429A7B65F007306BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3BA751D129A521B2000D9B49 /* SaveLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA751D429A521B2000D9B49 /* SaveLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLinkApp.swift; sourceTree = "<group>"; };
 		3BA751D629A521B2000D9B49 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -60,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B6D90B129A7B5D7007306BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B6D90B229A7B600007306BA /* LinkedAccounts.swift */,
+				3B6D90B429A7B65F007306BA /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3BA751C829A521B2000D9B49 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +129,7 @@
 				3BA751EB29A53987000D9B49 /* RegisterEmailView.swift */,
 				3BA751F929A5E922000D9B49 /* HomeView.swift */,
 				3BA751ED29A53A68000D9B49 /* DismissView.swift */,
+				3B6D90AF29A7AEE8007306BA /* ProfileView.swift */,
 			);
 			path = AuthenticationViews;
 			sourceTree = "<group>";
@@ -124,6 +140,7 @@
 				3BA7520329A602DB000D9B49 /* FacebookAuthentication */,
 				3BA751F329A542C1000D9B49 /* AuthenticationFirebaseDatasourece.swift */,
 				3BA751F529A544FF000D9B49 /* AuthenticationRepository.swift */,
+				3B6D90B129A7B5D7007306BA /* Model */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -235,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B6D90B529A7B65F007306BA /* User.swift in Sources */,
 				3BA751FA29A5E922000D9B49 /* HomeView.swift in Sources */,
 				3BA751D729A521B2000D9B49 /* AuthenticationView.swift in Sources */,
 				3BA751EE29A53A68000D9B49 /* DismissView.swift in Sources */,
@@ -244,6 +262,8 @@
 				3BA751F829A5462D000D9B49 /* AuthenticationViewModel.swift in Sources */,
 				3BA751EC29A53987000D9B49 /* RegisterEmailView.swift in Sources */,
 				3BA751D529A521B2000D9B49 /* SaveLinkApp.swift in Sources */,
+				3B6D90B029A7AEE8007306BA /* ProfileView.swift in Sources */,
+				3B6D90B329A7B600007306BA /* LinkedAccounts.swift in Sources */,
 				3BA751F629A544FF000D9B49 /* AuthenticationRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

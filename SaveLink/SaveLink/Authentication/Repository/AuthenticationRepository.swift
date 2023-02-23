@@ -43,4 +43,10 @@ final class AuthenticationRepository {
     func logout() throws {
         try authenticationFirebaseDataSource.logout()
     }
+    
+//    obtener todos los proveedores con el mismo email
+    func getCurrentProvider() -> [LinkedAccounts] {
+        authenticationFirebaseDataSource.currentProvider()
+    }
+    
 }

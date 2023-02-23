@@ -8,10 +8,6 @@
 import Foundation
 import FirebaseAuth
 
-struct User {
-    let email: String
-}
-
 final class AuthenticationFireBaseDataSource {
     
 //   Creamos la propiedad con su instancia a la clase de Facebook
@@ -87,4 +83,16 @@ final class AuthenticationFireBaseDataSource {
         try Auth.auth().signOut()
     }
     
+//    obtener todos los proveedores con el mismo email
+    func currentProvider () -> [LinkedAccounts] {
+        guard let currentUser = Auth.auth().currentUser else {
+            return []
+        }
+//        providerData: obtenemos un array con los IDs de los proveedores que tiene vinculado el currentUser
+        let linkedAccounts = currentUser.providerData.map { userInfo in
+//            recogemos los IDs de los proveedores y los transformamos a un modelo del dominio
+            LinkedAccounts(rawValue: userInfo.providerID)
+        }.compactMap{ $0 } // para eliminar todos los nil que haya en el array
+        return linkedAccounts
+    }
 }

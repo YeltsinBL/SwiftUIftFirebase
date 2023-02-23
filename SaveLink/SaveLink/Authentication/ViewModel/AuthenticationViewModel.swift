@@ -12,6 +12,8 @@ final class AuthenticationViewModel: ObservableObject {
 //    para mostrar mas informacion de lo ocurrido
     @Published var user: User?
     @Published var messageError: String?
+//    para llenar las cuentas vinculadas
+    @Published var linkedAccounds: [LinkedAccounts] = []
     
     //    creamos una propiedad e instancia del Repository
     private let authenticationRepository: AuthenticationRepository
@@ -70,5 +72,21 @@ final class AuthenticationViewModel: ObservableObject {
             print("Error logout")
         }
     }
+    
+//    obtener todos los proveedores con el mismo email
+    func getCurrentProvider() {
+        linkedAccounds = authenticationRepository.getCurrentProvider()
+        print("Cuentas Vinculadas \(linkedAccounds)")
+    }
+    
+//    para habilitar o no los botones de las cuentas a vincular
+    func isEmailAndPasswordLinked() -> Bool {
+//        verificamos si tiene este ID de nombre
+        linkedAccounds.contains(where: { $0.rawValue == "password" })
+    }
+    func isFacebookLinked() -> Bool {
+        linkedAccounds.contains(where: { $0.rawValue == "facebook.com" })
+    }
+    
     
 }
