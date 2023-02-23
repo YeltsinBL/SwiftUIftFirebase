@@ -49,4 +49,9 @@ final class AuthenticationRepository {
         authenticationFirebaseDataSource.currentProvider()
     }
     
+//    Vincular la cuenta de Facebook
+    func linkFaceook(completionBlock: @escaping (Bool) -> Void) {
+        authenticationFirebaseDataSource.linkFaceook(completionBlock: completionBlock)
+    }
+    
 }

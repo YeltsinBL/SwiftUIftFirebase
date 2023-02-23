@@ -15,6 +15,10 @@ final class AuthenticationViewModel: ObservableObject {
 //    para llenar las cuentas vinculadas
     @Published var linkedAccounds: [LinkedAccounts] = []
     
+//    Vincular las cuentas
+    @Published var showAlert: Bool = false
+    @Published var isAccountLinked: Bool = false
+    
     //    creamos una propiedad e instancia del Repository
     private let authenticationRepository: AuthenticationRepository
     init(authenticationRepository: AuthenticationRepository = AuthenticationRepository()) {
@@ -88,5 +92,14 @@ final class AuthenticationViewModel: ObservableObject {
         linkedAccounds.contains(where: { $0.rawValue == "facebook.com" })
     }
     
+//    Vincular la cuenta de Facebook
+    func linkFaceook() {
+        authenticationRepository.linkFaceook { [weak self] isSuccess in
+            print("Facebook Vinculado \(isSuccess.description)")
+            self?.isAccountLinked = isSuccess
+            self?.showAlert.toggle()
+            self?.getCurrentProvider()
+        }
+    }
     
 }

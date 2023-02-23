@@ -22,6 +22,7 @@ struct ProfileView: View {
                 .disabled(authenticationViewModel.isEmailAndPasswordLinked())
                 Button {
                     print("Vincular Facebook")
+                    authenticationViewModel.linkFaceook()
                 } label: {
                     HStack{
                         Image("facebook")
@@ -40,6 +41,15 @@ struct ProfileView: View {
         .task {
             authenticationViewModel.getCurrentProvider()
         }
+        .alert(authenticationViewModel.isAccountLinked ? "Cuenta Vinculada" : "Error",
+               isPresented: $authenticationViewModel.showAlert) {
+            Button("Aceptar"){
+                print("Cerrar Alert")
+            }
+        } message: {
+            Text(authenticationViewModel.isAccountLinked ? "Acabas de vincular tu cuenta": "Error al vincular la cuenta")
+        }
+
     }
 }
 

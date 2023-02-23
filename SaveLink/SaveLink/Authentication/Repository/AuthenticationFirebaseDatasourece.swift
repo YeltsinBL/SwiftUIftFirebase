@@ -95,4 +95,26 @@ final class AuthenticationFireBaseDataSource {
         }.compactMap{ $0 } // para eliminar todos los nil que haya en el array
         return linkedAccounts
     }
+    
+//    Vincular la cuenta de Facebook
+    func linkFaceook(completionBlock: @escaping (Bool) -> Void) {
+        facebookAuthentication.loginFacebook { result in
+            switch result {
+            case .success(let accessToken):
+                let credential = FacebookAuthProvider.credential(withAccessToken: accessToken)
+                Auth.auth().currentUser?.link(with: credential, completion: { authDataResult, error in
+                    if let error =  error {
+                        print("Error al vincular la credencial Facebook: \(error.localizedDescription)")
+                    }
+                    let email = authDataResult?.user.email ?? "No email"
+                    print("Nuevo user vinculado con el email: \(email)")
+                    completionBlock(true)
+                })
+            case .failure(let error):
+                print("Error al vincular una nueva cuenta de Facebook : \(error.localizedDescription)")
+                completionBlock(false)
+            }
+        }
+    }
+    
 }
