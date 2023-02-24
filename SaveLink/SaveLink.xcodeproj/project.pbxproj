@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B5636A829A902FD008ABA7E /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5636A729A902FD008ABA7E /* Tracker.swift */; };
+		3B5636AA29A92A93008ABA7E /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5636A929A92A93008ABA7E /* FirebaseCrashlytics */; };
 		3B6D90B029A7AEE8007306BA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90AF29A7AEE8007306BA /* ProfileView.swift */; };
 		3B6D90B329A7B600007306BA /* LinkedAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90B229A7B600007306BA /* LinkedAccounts.swift */; };
 		3B6D90B529A7B65F007306BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90B429A7B65F007306BA /* User.swift */; };
@@ -73,6 +74,7 @@
 				3BA7520029A5FA45000D9B49 /* FacebookLogin in Frameworks */,
 				3BA751E629A52324000D9B49 /* FirebaseAnalyticsSwift in Frameworks */,
 				3BA751F129A54163000D9B49 /* FirebaseAuth in Frameworks */,
+				3B5636AA29A92A93008ABA7E /* FirebaseCrashlytics in Frameworks */,
 				3B6D90B729A7EFC2007306BA /* FirebaseFirestore in Frameworks */,
 				3BA751E429A52324000D9B49 /* FirebaseAnalytics in Frameworks */,
 				3B6D90B929A7EFC2007306BA /* FirebaseFirestoreSwift in Frameworks */,
@@ -227,6 +229,7 @@
 				3BA751CD29A521B2000D9B49 /* Sources */,
 				3BA751CE29A521B2000D9B49 /* Frameworks */,
 				3BA751CF29A521B2000D9B49 /* Resources */,
+				3B5636AB29A92CF7008ABA7E /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -240,6 +243,7 @@
 				3BA751FF29A5FA45000D9B49 /* FacebookLogin */,
 				3B6D90B629A7EFC2007306BA /* FirebaseFirestore */,
 				3B6D90B829A7EFC2007306BA /* FirebaseFirestoreSwift */,
+				3B5636A929A92A93008ABA7E /* FirebaseCrashlytics */,
 			);
 			productName = SaveLink;
 			productReference = 3BA751D129A521B2000D9B49 /* SaveLink.app */;
@@ -294,6 +298,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B5636AB29A92CF7008ABA7E /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/${BUILD_PRODUCTS_DIR}/$(INFOPLIST_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${BUILD_DIR%Build/*}SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run -gsp ${PROJECT_DIR}/SaveLink/GoogleService-Info.plist;\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3BA751CD29A521B2000D9B49 /* Sources */ = {
@@ -447,6 +474,7 @@
 				CODE_SIGN_ENTITLEMENTS = SaveLink/SaveLink.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SaveLink/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -542,6 +570,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3B5636A929A92A93008ABA7E /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3BA751E229A52324000D9B49 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		3B6D90B629A7EFC2007306BA /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3BA751E229A52324000D9B49 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

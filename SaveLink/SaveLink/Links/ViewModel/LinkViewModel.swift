@@ -33,6 +33,11 @@ final class LinkViewModel: ObservableObject {
     
 //    agregar la nueva información a la base de datos
     func createNewLink(withURL url: String) {
+        
+//        Descomentar para probar el Crashlytics
+//        let number = [0]
+//        let _ = number[1]
+        
 //        método para trackear
         Tracker.trackCreateLinkEvent(url: url)
         
