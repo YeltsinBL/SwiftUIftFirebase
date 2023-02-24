@@ -31,13 +31,15 @@ final class LinkViewModel: ObservableObject {
         }
     }
     
-//    agregar la nueva información al array en memoria
+//    agregar la nueva información a la base de datos
     func createNewLink(withURL url: String) {
         linkRepository.createNewLink(withURL: url) { [weak self] result in
             switch result {
             case .success(let link):
 //                asignamos la nueva información al array en memoria de la aplicación
-                self?.links.append(link)
+//                self?.links.append(link)
+//                al guardar en la bd no necesita ser agredado al array de la memoria porque se actualiza en tiempo real
+                print("Nuevo link agregado: \(link.title)")
             case .failure(let error):
                 self?.messageError = error.localizedDescription
             }

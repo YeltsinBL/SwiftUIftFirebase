@@ -10,7 +10,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 //Modelo del dominio con las mismas propiedades de la base de datos en Firebase
-struct LinkModel: Decodable, Identifiable {
+struct LinkModel: Decodable, Identifiable, Encodable {
     @DocumentID var id: String? // indicamos que transforme el ID del documento de Firebase a nuestra propiedad ID
     let url: String
     let title: String
@@ -45,6 +45,17 @@ final class LinkDataSource {
                 completionsBlock(.success(links))
                 
             }
+    }
+    
+//    crear nueva informacion en la bd
+    func createNewLink(link: LinkModel, completionsBlock: @escaping (Result<LinkModel,Error>) -> Void) {
+        do {
+//            guarda la informacion el la bd de firebase
+            _ = try dataBase.collection(collection).addDocument(from: link)
+            completionsBlock(.success(link))
+        } catch {
+            completionsBlock(.failure(error))
+        }
     }
     
 }
