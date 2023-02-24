@@ -16,6 +16,7 @@
 		3B6D90BF29A7F0B7007306BA /* LinkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90BE29A7F0B7007306BA /* LinkRepository.swift */; };
 		3B6D90C129A7F0C5007306BA /* LinkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90C029A7F0C5007306BA /* LinkDataSource.swift */; };
 		3B6D90C429A84D81007306BA /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90C329A84D81007306BA /* LinkView.swift */; };
+		3B6D90C629A8582A007306BA /* MetadataDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90C529A8582A007306BA /* MetadataDataSource.swift */; };
 		3BA751D529A521B2000D9B49 /* SaveLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751D429A521B2000D9B49 /* SaveLinkApp.swift */; };
 		3BA751D729A521B2000D9B49 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751D629A521B2000D9B49 /* AuthenticationView.swift */; };
 		3BA751D929A521B4000D9B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BA751D829A521B4000D9B49 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		3B6D90BE29A7F0B7007306BA /* LinkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkRepository.swift; sourceTree = "<group>"; };
 		3B6D90C029A7F0C5007306BA /* LinkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDataSource.swift; sourceTree = "<group>"; };
 		3B6D90C329A84D81007306BA /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
+		3B6D90C529A8582A007306BA /* MetadataDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataDataSource.swift; sourceTree = "<group>"; };
 		3BA751D129A521B2000D9B49 /* SaveLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA751D429A521B2000D9B49 /* SaveLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLinkApp.swift; sourceTree = "<group>"; };
 		3BA751D629A521B2000D9B49 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				3B6D90BE29A7F0B7007306BA /* LinkRepository.swift */,
 				3B6D90C029A7F0C5007306BA /* LinkDataSource.swift */,
+				3B6D90C529A8582A007306BA /* MetadataDataSource.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				3BA751EE29A53A68000D9B49 /* DismissView.swift in Sources */,
 				3BA7520529A6030E000D9B49 /* FacebookAuthentication.swift in Sources */,
 				3BA751EA29A52DD1000D9B49 /* LoginEmailView.swift in Sources */,
+				3B6D90C629A8582A007306BA /* MetadataDataSource.swift in Sources */,
 				3BA751F429A542C1000D9B49 /* AuthenticationFirebaseDatasourece.swift in Sources */,
 				3B6D90C129A7F0C5007306BA /* LinkDataSource.swift in Sources */,
 				3BA751F829A5462D000D9B49 /* AuthenticationViewModel.swift in Sources */,

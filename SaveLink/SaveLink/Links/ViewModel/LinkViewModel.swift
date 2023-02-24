@@ -30,4 +30,18 @@ final class LinkViewModel: ObservableObject {
             }
         }
     }
+    
+//    agregar la nueva información al array en memoria
+    func createNewLink(withURL url: String) {
+        linkRepository.createNewLink(withURL: url) { [weak self] result in
+            switch result {
+            case .success(let link):
+//                asignamos la nueva información al array en memoria de la aplicación
+                self?.links.append(link)
+            case .failure(let error):
+                self?.messageError = error.localizedDescription
+            }
+        }
+    }
+    
 }
