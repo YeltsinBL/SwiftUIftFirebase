@@ -10,6 +10,12 @@
 		3B6D90B029A7AEE8007306BA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90AF29A7AEE8007306BA /* ProfileView.swift */; };
 		3B6D90B329A7B600007306BA /* LinkedAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90B229A7B600007306BA /* LinkedAccounts.swift */; };
 		3B6D90B529A7B65F007306BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90B429A7B65F007306BA /* User.swift */; };
+		3B6D90B729A7EFC2007306BA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3B6D90B629A7EFC2007306BA /* FirebaseFirestore */; };
+		3B6D90B929A7EFC2007306BA /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3B6D90B829A7EFC2007306BA /* FirebaseFirestoreSwift */; };
+		3B6D90BC29A7F09B007306BA /* LinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90BB29A7F09B007306BA /* LinkViewModel.swift */; };
+		3B6D90BF29A7F0B7007306BA /* LinkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90BE29A7F0B7007306BA /* LinkRepository.swift */; };
+		3B6D90C129A7F0C5007306BA /* LinkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90C029A7F0C5007306BA /* LinkDataSource.swift */; };
+		3B6D90C429A84D81007306BA /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90C329A84D81007306BA /* LinkView.swift */; };
 		3BA751D529A521B2000D9B49 /* SaveLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751D429A521B2000D9B49 /* SaveLinkApp.swift */; };
 		3BA751D729A521B2000D9B49 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA751D629A521B2000D9B49 /* AuthenticationView.swift */; };
 		3BA751D929A521B4000D9B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BA751D829A521B4000D9B49 /* Assets.xcassets */; };
@@ -33,6 +39,10 @@
 		3B6D90AF29A7AEE8007306BA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3B6D90B229A7B600007306BA /* LinkedAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedAccounts.swift; sourceTree = "<group>"; };
 		3B6D90B429A7B65F007306BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3B6D90BB29A7F09B007306BA /* LinkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkViewModel.swift; sourceTree = "<group>"; };
+		3B6D90BE29A7F0B7007306BA /* LinkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkRepository.swift; sourceTree = "<group>"; };
+		3B6D90C029A7F0C5007306BA /* LinkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDataSource.swift; sourceTree = "<group>"; };
+		3B6D90C329A84D81007306BA /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
 		3BA751D129A521B2000D9B49 /* SaveLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA751D429A521B2000D9B49 /* SaveLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLinkApp.swift; sourceTree = "<group>"; };
 		3BA751D629A521B2000D9B49 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -59,7 +69,9 @@
 				3BA7520029A5FA45000D9B49 /* FacebookLogin in Frameworks */,
 				3BA751E629A52324000D9B49 /* FirebaseAnalyticsSwift in Frameworks */,
 				3BA751F129A54163000D9B49 /* FirebaseAuth in Frameworks */,
+				3B6D90B729A7EFC2007306BA /* FirebaseFirestore in Frameworks */,
 				3BA751E429A52324000D9B49 /* FirebaseAnalytics in Frameworks */,
+				3B6D90B929A7EFC2007306BA /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +85,34 @@
 				3B6D90B429A7B65F007306BA /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3B6D90BA29A7F06A007306BA /* Links */ = {
+			isa = PBXGroup;
+			children = (
+				3BA751F929A5E922000D9B49 /* HomeView.swift */,
+				3B6D90C329A84D81007306BA /* LinkView.swift */,
+				3B6D90C229A7F0CD007306BA /* ViewModel */,
+				3B6D90BD29A7F0A7007306BA /* Repository */,
+			);
+			path = Links;
+			sourceTree = "<group>";
+		};
+		3B6D90BD29A7F0A7007306BA /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3B6D90BE29A7F0B7007306BA /* LinkRepository.swift */,
+				3B6D90C029A7F0C5007306BA /* LinkDataSource.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		3B6D90C229A7F0CD007306BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B6D90BB29A7F09B007306BA /* LinkViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3BA751C829A521B2000D9B49 = {
@@ -98,6 +138,7 @@
 				3BA7520229A5FF03000D9B49 /* SaveLink.entitlements */,
 				3BA7520129A5FAC4000D9B49 /* Info.plist */,
 				3BA751D429A521B2000D9B49 /* SaveLinkApp.swift */,
+				3B6D90BA29A7F06A007306BA /* Links */,
 				3BA751FD29A5F4AB000D9B49 /* Authentication */,
 				3BA751E729A5244B000D9B49 /* GoogleService-Info.plist */,
 				3BA751D829A521B4000D9B49 /* Assets.xcassets */,
@@ -127,7 +168,6 @@
 				3BA751D629A521B2000D9B49 /* AuthenticationView.swift */,
 				3BA751E929A52DD1000D9B49 /* LoginEmailView.swift */,
 				3BA751EB29A53987000D9B49 /* RegisterEmailView.swift */,
-				3BA751F929A5E922000D9B49 /* HomeView.swift */,
 				3BA751ED29A53A68000D9B49 /* DismissView.swift */,
 				3B6D90AF29A7AEE8007306BA /* ProfileView.swift */,
 			);
@@ -192,6 +232,8 @@
 				3BA751E529A52324000D9B49 /* FirebaseAnalyticsSwift */,
 				3BA751F029A54163000D9B49 /* FirebaseAuth */,
 				3BA751FF29A5FA45000D9B49 /* FacebookLogin */,
+				3B6D90B629A7EFC2007306BA /* FirebaseFirestore */,
+				3B6D90B829A7EFC2007306BA /* FirebaseFirestoreSwift */,
 			);
 			productName = SaveLink;
 			productReference = 3BA751D129A521B2000D9B49 /* SaveLink.app */;
@@ -254,13 +296,17 @@
 			files = (
 				3B6D90B529A7B65F007306BA /* User.swift in Sources */,
 				3BA751FA29A5E922000D9B49 /* HomeView.swift in Sources */,
+				3B6D90BF29A7F0B7007306BA /* LinkRepository.swift in Sources */,
 				3BA751D729A521B2000D9B49 /* AuthenticationView.swift in Sources */,
 				3BA751EE29A53A68000D9B49 /* DismissView.swift in Sources */,
 				3BA7520529A6030E000D9B49 /* FacebookAuthentication.swift in Sources */,
 				3BA751EA29A52DD1000D9B49 /* LoginEmailView.swift in Sources */,
 				3BA751F429A542C1000D9B49 /* AuthenticationFirebaseDatasourece.swift in Sources */,
+				3B6D90C129A7F0C5007306BA /* LinkDataSource.swift in Sources */,
 				3BA751F829A5462D000D9B49 /* AuthenticationViewModel.swift in Sources */,
+				3B6D90BC29A7F09B007306BA /* LinkViewModel.swift in Sources */,
 				3BA751EC29A53987000D9B49 /* RegisterEmailView.swift in Sources */,
+				3B6D90C429A84D81007306BA /* LinkView.swift in Sources */,
 				3BA751D529A521B2000D9B49 /* SaveLinkApp.swift in Sources */,
 				3B6D90B029A7AEE8007306BA /* ProfileView.swift in Sources */,
 				3B6D90B329A7B600007306BA /* LinkedAccounts.swift in Sources */,
@@ -488,6 +534,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3B6D90B629A7EFC2007306BA /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3BA751E229A52324000D9B49 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		3B6D90B829A7EFC2007306BA /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3BA751E229A52324000D9B49 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
 		3BA751E329A52324000D9B49 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3BA751E229A52324000D9B49 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
