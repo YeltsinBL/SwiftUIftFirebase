@@ -41,5 +41,9 @@ final class LinkRepository {
         linkDatasource.update(link: link)
     }
     
+//    elimianr información de la BD
+    func delete(link: LinkModel) {
+        linkDatasource.delete(link: link)
+    }
     
 }

@@ -33,7 +33,13 @@
 - `LinkViewModel`: actualizamos el método que guardaba la nueva información en memoria de la aplicacion, retiramos la linea que lo agregaba al array porque al momento de guardar la nueva información en la bd, la vista se actualiza con esa información.
 
 ### Modificar información de la Base de datos: Firestore Database
-- `LinkDataSource`: creamos el método para  actualizar la información obteniendo primero el 'DocumentId' para luego pasarle la nueva información.
+- `LinkDataSource`: creamos el método para actualizar la información obteniendo primero el 'DocumentId' para luego pasarle la nueva información.
 - `LinkRepository`: creamos un método para utilizar el método de actualizar del DataSource.
 - `LinkViewModel`: creamos el método para mapear la nueva información y utilizar el método de actualizar del Repository pasándole la información mapeada.
 - `LinkView`: utilizamos el método del ViewModel en el botón que actualizará, en este caso son dos agrupados en un 'swipeActions'.
+
+### Eliminar información de la Base de datos: Firestore Database
+- `LinkDataSource`: creamos el método para eliminar la información obteniendo primero el 'DocumentId' para indicar que lo elimine.
+- `LinkRepository`: creamos un método para utilizar el método de eliminar del DataSource.
+- `LinkViewModel`: creamos el método para utilizar el método de eliminar del Repository.
+- `LinkView`: utilizamos el método del ViewModel en el botón que eliminar, que está en un 'swipeActions'.

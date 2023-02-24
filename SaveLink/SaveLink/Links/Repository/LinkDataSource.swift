@@ -73,4 +73,14 @@ final class LinkDataSource {
         }
     }
     
+//    elimianr información de la BD
+    func delete(link: LinkModel) {
+//        obtenemos el id del documento
+        guard let documentId = link.id else {
+            print("No se encontro el documento id")
+            return
+        }
+        dataBase.collection(collection).document(documentId).delete()
+    }
+    
 }

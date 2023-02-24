@@ -61,5 +61,9 @@ final class LinkViewModel: ObservableObject {
         linkRepository.update(link: updateLink)
     }
     
+//    elimianr información de la BD
+    func delete(link: LinkModel) {
+        linkRepository.delete(link: link)
+    }
     
 }
