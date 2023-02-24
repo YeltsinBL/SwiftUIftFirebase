@@ -23,7 +23,15 @@
 - Archivo raíz > Targets > Build Settings > All: dentro de 'Debug Information Format' debemos de actualizar el 'Debug' para que también haga el 'dSYM'.
 - Archivo raíz > Targets > Build Phases: agregamos un nuevo 'New Run Script Phase'.
 -- Renombramos el Script a 'Crashlytics', expandimos y debajo del Shell agregamos el siguiente código:  ```
-${BUILD_DIR%Build/*}SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run -gsp ${PROJECT_DIR}/[ruta_de_la_direccion]/GoogleService-Info.plist; ``` ; esto es significa que al comando de Crashlytics le pasamos la ruta del '.plist'.
+${BUILD_DIR%Build/*}SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run -gsp ${PROJECT_DIR}/[ruta_de_la_direccion]/GoogleService-Info.plist; ``` ; esto es significa que al comando de Crashlytics le pasamos la ruta del '.plist'. 
 -- En los Input Files agregamos lo siguiente: ```
 ${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME} ``` y ``` $(SRCROOT)/${BUILD_PRODUCTS_DIR}/$(INFOPLIST_PATH) ```
+
+## REMOTE CONFIG Test A/B
+- `RemoteConfiguration`: inicializamos e instanciamos el 'RemoteConfig'.
+-- Dentro del init, agregamos una configuración, que en este caso es un tiempo de 30 segundos mientras llega la información de Firebase y se lo pasa al RemoteConfig.
+-- Mientras carga la información se visualiza un texto provisional.
+-- Creamos un método que obtendrá el valor directo de Firebase para actualizar el texto.
+- `SaveLinkApp`: instanciamos el 'RemoteConfiguration/ y lo inyectamos al 'HomeView' utilizando el 'environmentObject'.
+- `LinkView`: creamos una variable que lleve el 'EnvironmentObject' y del tipo 'RemoteConfiguration' para actualizar el texto y usar el método de obtener el valor del texto.
 

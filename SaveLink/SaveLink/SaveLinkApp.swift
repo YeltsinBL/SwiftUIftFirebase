@@ -28,12 +28,15 @@ struct SaveLinkApp: App {
     
 //Pasa saber si el usuario esta logueado o no
     @StateObject var authenticationViewModel = AuthenticationViewModel()
+//    instanciamos e inyectamos
+    @StateObject var remoteConfiguration = RemoteConfiguration()
     
     var body: some Scene {
         WindowGroup {
             if authenticationViewModel.user?.email != nil {
 //                Text("Usuario Logueado! \(user.email)")
                 HomeView(authenticationViewModel: authenticationViewModel)
+                    .environmentObject(remoteConfiguration)
             } else {
                 AuthenticationView(authenticationViewModel: authenticationViewModel)
             }

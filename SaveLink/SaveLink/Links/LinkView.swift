@@ -11,6 +11,7 @@ struct LinkView: View {
     
     @ObservedObject var linkViewModel: LinkViewModel
     @State var text: String = ""
+    @EnvironmentObject var remoteConfiguration: RemoteConfiguration
     
     var body: some View {
         VStack {
@@ -25,7 +26,7 @@ struct LinkView: View {
             Button {
                 linkViewModel.createNewLink(withURL: text)
             } label: {
-                Label("Crear Link", systemImage: "link")
+                Label(remoteConfiguration.buttonTitle, systemImage: "link")
             }
             .tint(.green)
             .controlSize(.regular)
@@ -88,6 +89,7 @@ struct LinkView: View {
                 }
             }
             .task {
+                remoteConfiguration.fetch()
                 linkViewModel.getAllLinks()
             }
         }
