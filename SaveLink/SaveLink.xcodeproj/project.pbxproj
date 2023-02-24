@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B5636A829A902FD008ABA7E /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5636A729A902FD008ABA7E /* Tracker.swift */; };
 		3B6D90B029A7AEE8007306BA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90AF29A7AEE8007306BA /* ProfileView.swift */; };
 		3B6D90B329A7B600007306BA /* LinkedAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90B229A7B600007306BA /* LinkedAccounts.swift */; };
 		3B6D90B529A7B65F007306BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90B429A7B65F007306BA /* User.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B5636A729A902FD008ABA7E /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
 		3B6D90AF29A7AEE8007306BA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3B6D90B229A7B600007306BA /* LinkedAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedAccounts.swift; sourceTree = "<group>"; };
 		3B6D90B429A7B65F007306BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				3B6D90BE29A7F0B7007306BA /* LinkRepository.swift */,
 				3B6D90C029A7F0C5007306BA /* LinkDataSource.swift */,
 				3B6D90C529A8582A007306BA /* MetadataDataSource.swift */,
+				3B5636A729A902FD008ABA7E /* Tracker.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			files = (
 				3B6D90B529A7B65F007306BA /* User.swift in Sources */,
 				3BA751FA29A5E922000D9B49 /* HomeView.swift in Sources */,
+				3B5636A829A902FD008ABA7E /* Tracker.swift in Sources */,
 				3B6D90BF29A7F0B7007306BA /* LinkRepository.swift in Sources */,
 				3BA751D729A521B2000D9B49 /* AuthenticationView.swift in Sources */,
 				3BA751EE29A53A68000D9B49 /* DismissView.swift in Sources */,

@@ -33,6 +33,9 @@ final class LinkViewModel: ObservableObject {
     
 //    agregar la nueva información a la base de datos
     func createNewLink(withURL url: String) {
+//        método para trackear
+        Tracker.trackCreateLinkEvent(url: url)
+        
         linkRepository.createNewLink(withURL: url) { [weak self] result in
             switch result {
             case .success(let link):
@@ -40,9 +43,15 @@ final class LinkViewModel: ObservableObject {
 //                self?.links.append(link)
 //                al guardar en la bd no necesita ser agredado al array de la memoria porque se actualiza en tiempo real
                 print("Nuevo link agregado: \(link.title)")
-                self?.getAllLinks()
+//                self?.getAllLinks()
+//                método para trackear
+                Tracker.trackSaveLinkEvent()
             case .failure(let error):
-                self?.messageError = error.localizedDescription
+                DispatchQueue.main.async {
+                    self?.messageError = error.localizedDescription
+//                    método para trackear
+                    Tracker.trackErrorLinkEvent(error: error.localizedDescription)
+                }
             }
         }
     }
