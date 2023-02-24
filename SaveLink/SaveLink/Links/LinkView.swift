@@ -63,6 +63,20 @@ struct LinkView: View {
                             }
                         }
                     }
+                    .swipeActions(edge: .trailing) {
+                        Button {
+                            linkViewModel.updateIsFavorited(link: link)
+                        } label: {
+                            Label("Favorito", systemImage: "star.fill")
+                        }
+                        .tint(.yellow)
+                        Button {
+                            linkViewModel.updateIsCompleted(link: link)
+                        } label: {
+                            Label("Completado", systemImage: "checkmark.circle.fill")
+                        }
+                        .tint(.blue)
+                    }
                 }
             }
             .task {

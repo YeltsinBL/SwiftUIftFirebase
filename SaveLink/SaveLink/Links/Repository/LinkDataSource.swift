@@ -47,14 +47,29 @@ final class LinkDataSource {
             }
     }
     
-//    crear nueva informacion en la bd
+//    crear nueva información en la bd
     func createNewLink(link: LinkModel, completionsBlock: @escaping (Result<LinkModel,Error>) -> Void) {
         do {
-//            guarda la informacion el la bd de firebase
+//            guarda la información el la bd de firebase
             _ = try dataBase.collection(collection).addDocument(from: link)
             completionsBlock(.success(link))
         } catch {
             completionsBlock(.failure(error))
+        }
+    }
+    
+//    actualizar información de la BD
+    func update(link: LinkModel) {
+//        obtenemos el id del documento
+        guard let documentId = link.id else {
+            print("No se encontro el documento id")
+            return
+        }
+        do {
+//            indicamos cual es el documento a actualizar por su ID y le pasamos la los nuevos datos
+            _ = try dataBase.collection(collection).document(documentId).setData(from: link)
+        } catch {
+            print("Error al actualizar la informacion de la BD")
         }
     }
     

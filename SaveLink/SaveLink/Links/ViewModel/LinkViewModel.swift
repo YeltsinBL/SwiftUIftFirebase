@@ -40,10 +40,26 @@ final class LinkViewModel: ObservableObject {
 //                self?.links.append(link)
 //                al guardar en la bd no necesita ser agredado al array de la memoria porque se actualiza en tiempo real
                 print("Nuevo link agregado: \(link.title)")
+                self?.getAllLinks()
             case .failure(let error):
                 self?.messageError = error.localizedDescription
             }
         }
     }
+    
+//    actualizar información de la BD
+    func updateIsFavorited(link: LinkModel) {
+        let updateLink = LinkModel(id: link.id, url: link.url, title: link.title,
+                                   isFavorited: link.isFavorited ? false : true,
+                                   isCompleted: link.isCompleted)
+        linkRepository.update(link: updateLink)
+    }
+    func updateIsCompleted(link: LinkModel) {
+        let updateLink = LinkModel(id: link.id, url: link.url, title: link.title,
+                                   isFavorited: link.isFavorited,
+                                   isCompleted: link.isCompleted ? false : true)
+        linkRepository.update(link: updateLink)
+    }
+    
     
 }

@@ -34,7 +34,12 @@ final class LinkRepository {
                 completionBlock(.failure(error))
             }
         }
-        
     }
+    
+//    actualizar información de la BD
+    func update(link: LinkModel) {
+        linkDatasource.update(link: link)
+    }
+    
     
 }

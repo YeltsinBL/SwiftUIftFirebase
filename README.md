@@ -31,3 +31,9 @@
 - `LinkDataSource`: creamos el método para guardar la nueva información en la base de datos.
 - `LinkRepository`: actualizamos el método que utilizaba el obtener información por la URL para que cuando no haya error, guarde directamente la información en la base de datos.
 - `LinkViewModel`: actualizamos el método que guardaba la nueva información en memoria de la aplicacion, retiramos la linea que lo agregaba al array porque al momento de guardar la nueva información en la bd, la vista se actualiza con esa información.
+
+### Modificar información de la Base de datos: Firestore Database
+- `LinkDataSource`: creamos el método para  actualizar la información obteniendo primero el 'DocumentId' para luego pasarle la nueva información.
+- `LinkRepository`: creamos un método para utilizar el método de actualizar del DataSource.
+- `LinkViewModel`: creamos el método para mapear la nueva información y utilizar el método de actualizar del Repository pasándole la información mapeada.
+- `LinkView`: utilizamos el método del ViewModel en el botón que actualizará, en este caso son dos agrupados en un 'swipeActions'.
