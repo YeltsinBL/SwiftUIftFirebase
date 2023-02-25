@@ -12,6 +12,7 @@
 		3B5636AD29A93678008ABA7E /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5636AC29A93678008ABA7E /* FirebaseRemoteConfig */; };
 		3B5636AF29A93678008ABA7E /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5636AE29A93678008ABA7E /* FirebaseRemoteConfigSwift */; };
 		3B5636B129A93849008ABA7E /* RemoteConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5636B029A93849008ABA7E /* RemoteConfiguration.swift */; };
+		3B5636B329A985A1008ABA7E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 3B5636B229A985A1008ABA7E /* FirebaseMessaging */; };
 		3B6D90B029A7AEE8007306BA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90AF29A7AEE8007306BA /* ProfileView.swift */; };
 		3B6D90B329A7B600007306BA /* LinkedAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90B229A7B600007306BA /* LinkedAccounts.swift */; };
 		3B6D90B529A7B65F007306BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D90B429A7B65F007306BA /* User.swift */; };
@@ -77,6 +78,7 @@
 			files = (
 				3BA7520029A5FA45000D9B49 /* FacebookLogin in Frameworks */,
 				3BA751E629A52324000D9B49 /* FirebaseAnalyticsSwift in Frameworks */,
+				3B5636B329A985A1008ABA7E /* FirebaseMessaging in Frameworks */,
 				3BA751F129A54163000D9B49 /* FirebaseAuth in Frameworks */,
 				3B5636AF29A93678008ABA7E /* FirebaseRemoteConfigSwift in Frameworks */,
 				3B5636AA29A92A93008ABA7E /* FirebaseCrashlytics in Frameworks */,
@@ -253,6 +255,7 @@
 				3B5636A929A92A93008ABA7E /* FirebaseCrashlytics */,
 				3B5636AC29A93678008ABA7E /* FirebaseRemoteConfig */,
 				3B5636AE29A93678008ABA7E /* FirebaseRemoteConfigSwift */,
+				3B5636B229A985A1008ABA7E /* FirebaseMessaging */,
 			);
 			productName = SaveLink;
 			productReference = 3BA751D129A521B2000D9B49 /* SaveLink.app */;
@@ -594,6 +597,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3BA751E229A52324000D9B49 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfigSwift;
+		};
+		3B5636B229A985A1008ABA7E /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3BA751E229A52324000D9B49 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 		3B6D90B629A7EFC2007306BA /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
