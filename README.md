@@ -2,36 +2,35 @@
 ## _Aplicación inicial en SwiftUI con Firebase_
 
 ## Configurando Firebase en nuestra aplicación utilizando SPM
-- Iniciamos agregando el package de 'Github Firebase SDK' utilizando SPM (Swift Package Manager) y seleccionamos las dependencias a utilizar, en este caso son FirebaseFirestore y FirebaseFirestoreSwift.
+- Iniciamos agregando el package de 'Github Firebase SDK' utilizando SPM (Swift Package Manager) y seleccionamos las dependencias a utilizar.
 - Agregamos el archivo descargado de Firebase al proyecto de nuestras aplicación, para inicializar Firebase.
 - Inicializamos Firebase en el archivo 'main' de la aplicación creando la clase 'AppDelegate' y luego, registrando la clase en la estructura del main.
 
-## Trackear Eventos
-### Registrar un EventLog en Firebase
-- `Tracker`: creamos métodos static que se conecten al 'LogEvent' de Firebase para registrarlo.
-- `LinkViewModel`: utilizamos los métodos static dentro de los métodos existentes de acuerdo a los nombres del trackeo.
+Lo que se ha realizado en este proyecto es lo siguiente:
 
-### Mostrar el detalle de los EventLog en la consola de XCode
-- Editar Schema > Run > Arguments: en 'Arguments Passed On Launch' agregamos lo siguiente '-FIRAnalyticsDebugEnabled'
+## Autenticación
+- Iniciar Sesion con Email y Password
+- Iniciar Sesion con el proveedor de Facebook.
+- Vincular ambas cuentas, desde Email a Facebook como viceversa.
+
+## Base de Datos
+- Utilizar la base de datos: Firestore Database
+- Se realizó  un CRUD.
+- Se obtuvo información mediante una URL.
+
+## Trackear Eventos
+- Se registró los eventos que realizan los metodos al hacer clic en el boton.
 
 ## Detectar CRASH o BUGS
 ### Fichero dSYM
-- Los 'dSYM' nos proporcionan información muy fácil de leer y entender, sin este fichero no podríamos saber en dónde esta ocurriendo el Crash o Bugs.
-- Este fichero se debe de proporcionar a CrashLytics cada vez que compilamos o realizamos una nueva versión de la aplicación.
-
-### Configurando XCode para que genere el dSYM
-- Archivo raíz > Targets > Build Settings > All: dentro de 'Debug Information Format' debemos de actualizar el 'Debug' para que también haga el 'dSYM'.
-- Archivo raíz > Targets > Build Phases: agregamos un nuevo 'New Run Script Phase'.
--- Renombramos el Script a 'Crashlytics', expandimos y debajo del Shell agregamos el siguiente código:  ```
-${BUILD_DIR%Build/*}SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run -gsp ${PROJECT_DIR}/[ruta_de_la_direccion]/GoogleService-Info.plist; ``` ; esto es significa que al comando de Crashlytics le pasamos la ruta del '.plist'. 
--- En los Input Files agregamos lo siguiente: ```
-${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME} ``` y ``` $(SRCROOT)/${BUILD_PRODUCTS_DIR}/$(INFOPLIST_PATH) ```
+- Se hizo seguimiento a las posibles causar por el cual la aplicacion se pueda Crashear o Buguear.
 
 ## REMOTE CONFIG Test A/B
-- `RemoteConfiguration`: inicializamos e instanciamos el 'RemoteConfig'.
--- Dentro del init, agregamos una configuración, que en este caso es un tiempo de 30 segundos mientras llega la información de Firebase y se lo pasa al RemoteConfig.
--- Mientras carga la información se visualiza un texto provisional.
--- Creamos un método que obtendrá el valor directo de Firebase para actualizar el texto.
-- `SaveLinkApp`: instanciamos el 'RemoteConfiguration/ y lo inyectamos al 'HomeView' utilizando el 'environmentObject'.
-- `LinkView`: creamos una variable que lleve el 'EnvironmentObject' y del tipo 'RemoteConfiguration' para actualizar el texto y usar el método de obtener el valor del texto.
+- Se hizo una prueba de Test para saber cual es la probabilidad de mostrar cierto texto a los usuarios.
 
+## Notificaciones PUSH (esta parte esta en su rama, no esta mergeado porque no lo he probado, no tengo cuenta de Developer en Apple)
+- Para que funciones esta parte, se tiene que crear una cuenta como Developer en el portal de Apple.
+- Se activó los permisos para recibir notificaciones.
+- Se visualiza la notificación si la aplicación esta en primer plano como en segundo plano.
+
+Guía de referencia en el canal de [SwiftBeta](https://www.youtube.com/watch?v=r1tGrqmTJ8s&list=PLeTOFRUxkMcoG4CZP7qAbkTgfj4ARDmxm&index=1)
